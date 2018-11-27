@@ -16,12 +16,13 @@ function DistanceColor(props) {
 
   function isClose(distance) {
     if(distance <= closestDistance) {
-      return <Icon
-              name='location-on'
-              color="red"
-              containerStyle={styles.locationIcon}
-              size= {40}
-            />
+      return
+      <Icon
+      name='location-on'
+      color="red"
+      containerStyle={styles.locationIcon}
+      size= {40}
+      />
     }
   }
 
@@ -56,27 +57,45 @@ function DistanceColor(props) {
   )
 }
 
-function Header(props) {
-  console.log('============',props)
-  return (
-    <View style={styles.header}>
-      <Icon
-      type='ionicon'
-      name='ios-arrow-back'
-      size= {30}
-      color= 'pink'
-      onPress={()=> props.Nav.navigate('Profile')}
-      />
-      <Text style={styles.headerText}> Connections </Text>
-      <Icon
-      type='ionicon'
-      name='ios-information-circle-outline'
-      size= {35}
-      color= 'pink'
-      onPress={()=> console.log("Icon was pressed")}
-      />
-    </View>
-  )
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isConnections: true,
+    }
+  }
+
+  _handleMe = (event) => {
+    this.setState((prevState) => {
+      console.log("We are here");
+      return {
+        isConnections: prevState.isConnections
+      }
+    });
+  }
+
+
+  render() {
+    return (
+      <View style={styles.header}>
+        <Icon
+        type='ionicon'
+        name='ios-arrow-back'
+        size= {30}
+        color= 'pink'
+        onPress={()=> this.props.Nav.navigate('Profile')}
+        />
+        <Text style={styles.headerText}> Connections </Text>
+        <Icon
+        type='ionicon'
+        name='ios-information-circle-outline'
+        size= {35}
+        color= 'pink'
+        onPress={() => this.props.Nav.navigate('Info')}
+        />
+      </View>
+    )
+  }
 }
 
 function CardOpen(props) {
@@ -261,7 +280,6 @@ export default class LinksScreen extends React.Component {
             {...this.props}
             />
           )}
-
         </ScrollView>
       </ImageBackground>
     );

@@ -8,6 +8,9 @@ import ProfileScreen from '../screens/ProfileScreen';
 import LinksScreen from '../screens/LinksScreen';
 import TrackScreen from '../screens/TrackScreen';
 import BarCode from '../screens/BarCode';
+import Info from '../screens/Info';
+
+
 
 
 
@@ -43,6 +46,7 @@ const BarStack = createStackNavigator({
 const LinksStack = createStackNavigator({
   Links: LinksScreen,
   Track: TrackScreen,
+  Info : Info,
 });
 
 LinksStack.navigationOptions = {

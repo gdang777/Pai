@@ -5,6 +5,8 @@ export default class Info extends Component {
   state = {
     modalVisible: false,
   };
+  // this.setModalVisible = this.setModalVisible.bind(this);
+
 
   setModalVisible(visible) {
     this.setState({modalVisible: visible});
@@ -38,7 +40,7 @@ export default class Info extends Component {
           onPress={() => {
             this.setModalVisible(true);
           }}>
-          <Text>Show Modal</Text>
+          <Text>Show More info</Text>
         </TouchableHighlight>
       </View>
     );
