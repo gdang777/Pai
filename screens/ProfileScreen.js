@@ -122,7 +122,7 @@ export default class ProfileScreen extends React.Component {
                 size= {35}
                 color= '#474747'
                 />
-                <Text style={{color: '#474747',fontWeight: 'bold'}}>{this.props.screenProps.friends} Friends
+                <Text style={{color: '#474747',fontWeight: 'bold'}}>{this.props.user.number_of_friends} Friends
                 </Text>
               </Badge>
 
