@@ -61,10 +61,8 @@ LinksStack.navigationOptions = {
   ),
 };
 
-
 export default createMaterialTopTabNavigator(
   {
-
     ProfileStack,
     LinksStack,
   },
